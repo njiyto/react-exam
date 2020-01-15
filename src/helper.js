@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function getSortedList(list) {
-  if (!list.length) return null;
+  if (!list?.length) return null;
   let SortedList = {};
   for (const book of list) {
     if (SortedList[book.shelf]) {
@@ -10,7 +10,7 @@ export function getSortedList(list) {
       SortedList[book.shelf] = [book]
     }
   }
-  if (!Object.keys(SortedList).length) return null;
+  if (!Object.keys(SortedList)?.length) return null;
   return SortedList;
 }
 

@@ -7,13 +7,17 @@ function Book({ book }) {
     return null;
   }
 
+  const img = book.imageLinks?.smallThumbnail
+    ? `url(${book.imageLinks.smallThumbnail})`
+    : 'none';
+
   return (
     <li>
       <div className="book">
         <div className="book-top">
           <div
             className="book-cover"
-            style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.smallThumbnail})` }}
+            style={{ width: 128, height: 193, backgroundImage: img }}
           />
           <SelectField shelf={book.shelf} book={book} />
         </div>

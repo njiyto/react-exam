@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Authors({ data }) {
-  if (!data.length) {
+  if (!data?.length) {
     return null;
   }
 

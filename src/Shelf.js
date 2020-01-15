@@ -2,7 +2,7 @@ import React from 'react';
 import Book from './Book';
 
 function Shelf({ name, list }) {
-  if (!name || !list.length) {
+  if (!name || !list?.length) {
     return null;
   }
 

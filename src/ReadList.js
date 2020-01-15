@@ -1,30 +1,11 @@
 import React, { Component } from 'react';
-import * as BooksAPI from './BooksAPI';
 import Title from './Title';
 import SearchButton from './SearchButton';
 import Shelf from './Shelf';
-import { getSortedList, Context } from './helper.js';
 
 export default class ReadList extends Component {
-  state = {
-    list: null,
-    listLoading: true
-  }
-
-  componentDidMount() {
-    this.getList();
-  }
-
-  getList = () => {
-    this.setState({ listLoading: true });
-    BooksAPI.getAll().then((list) => {
-      const sortedList = getSortedList(list);
-      this.setState({ list: sortedList, listLoading: false });
-    })
-  };
-
   render() {
-    const { list, listLoading } = this.state;
+    const { list, listLoading } = this.props;
 
     return (
       <div className="list-books">
@@ -38,12 +19,10 @@ export default class ReadList extends Component {
               {!list && !listLoading && (
                 <div> empty </div>
               )}
-              <Context.Provider value={this.getList}>
-                {list && (
-                  Object.keys(list).map((shelf) => (
-                    <Shelf key={shelf} name={shelf} list={list[shelf]} />
-                )))}
-               </Context.Provider>
+              {list && (
+                Object.keys(list).map((shelf) => (
+                  <Shelf key={shelf} name={shelf} list={list[shelf]} />
+              )))}
             </div>
           </div>
           <SearchButton />
