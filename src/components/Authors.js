@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export default function Authors({ data }) {
+function Authors({ data }) {
   if (!data?.length) {
     return null;
   }
@@ -13,3 +13,5 @@ export default function Authors({ data }) {
     </div>
   )
 }
+
+export default React.memo(Authors);

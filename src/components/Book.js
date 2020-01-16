@@ -22,7 +22,7 @@ function Book({ book }) {
           <SelectField shelf={book.shelf} book={book} />
         </div>
         <div className="book-title">{book.title}</div>
-        <Authors data={ book.authors } />
+        <Authors data={book.authors} />
       </div>
     </li>
   )

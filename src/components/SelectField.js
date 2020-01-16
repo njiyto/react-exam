@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect} from 'react';
-import * as BooksAPI from './BooksAPI';
-import { Context } from './helper.js';
+import * as BooksAPI from '../BooksAPI';
+import { Context } from '../helper.js';
 
 function SelectField({ shelf, book }) {
   const [value, setValue] = useState('move');
@@ -29,7 +29,7 @@ function SelectField({ shelf, book }) {
         <option value="read">Read</option>
         <option value="none">None</option>
       </select>
-      </div>
+    </div>
   )
 }
 

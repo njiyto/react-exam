@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ButtonBack from './ButtonBack';
+import Button from '../components/Button';
 import SearchField from './SearchField';
-import * as BooksAPI from './BooksAPI';
+import * as BooksAPI from '../BooksAPI';
 import BooksList from './BooksList';
 
 export default class Search extends Component {
@@ -17,17 +17,20 @@ export default class Search extends Component {
 
   render() {
     const { list } = this.state;
-     console.log('list', list)
+    const { chosenList } = this.props;
+
     return (
       <>
         <div className="search-books">
           <div className="search-books-bar">
-            <ButtonBack />
+            <Button className="close-search" link="/">
+              Close
+            </Button>
             <SearchField onChange={this.onChange} />
           </div>
         </div>
         {!!list && (
-          <BooksList list={list} chosenList={this.props.chosenList} />
+          <BooksList list={list} chosenList={chosenList} />
         )}
      </>
     )

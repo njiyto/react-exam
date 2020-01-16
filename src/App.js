@@ -37,8 +37,8 @@ export default class App extends Component {
             <ReadList list={list} listLoading={listLoading} />
           </Context.Provider>
         )} />
-        <Route path="/search" render={() => ( 
-          <Context.Provider value={() => null}>
+        <Route path="/search" render={() => (
+          <Context.Provider value={this.getList}>
             <Search chosenList={chosenList} />
           </Context.Provider>
         )} />
