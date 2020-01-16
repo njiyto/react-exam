@@ -1,6 +1,6 @@
 # MyReads Project
 
-It's my exam project
+It's my exam project.
 This App using: Create React App
 
 ### Fast start

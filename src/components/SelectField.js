@@ -3,7 +3,7 @@ import * as BooksAPI from '../BooksAPI';
 import { Context } from '../helper.js';
 
 function SelectField({ shelf, book }) {
-  const [value, setValue] = useState('move');
+  const [value, setValue] = useState('none');
   const callback = useContext(Context);
 
   useEffect(() => {

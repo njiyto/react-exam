@@ -10,9 +10,13 @@ export default class Search extends Component {
   }
 
   onChange = (query) => {
-    BooksAPI.search(query).then((list) => {
-      this.setState({ list })
-    })
+    if (query.length) {
+      BooksAPI.search(query).then((list) => {
+        this.setState({ list })
+      })
+    } else {
+      this.setState({ list: null })
+    }
   }
 
   render() {
